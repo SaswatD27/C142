@@ -244,7 +244,7 @@ int main()
 			       break;
 			case 2:deletenodel(l);
 			       break;
-			case 3:deletenoder(l);
+			case 3:delet(l);
 			       break;
 			case 4:display(l);
 			       break;
