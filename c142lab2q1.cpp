@@ -205,13 +205,16 @@ void delet(llist &l)
 //write a function display with the object l of llist as a parameter
 void display(llist l)
 {
-	//
+	//declare a node pointer current and initialise it with the value of the node pointer head of the object l
 	node *current=l.head;
+	//declare an int variable i initialising it with the value 1
 	int i=1;
+	//if head's value is NULL display error message
 	if(l.head==NULL)
 	{
 		cout<<"Underflow";
 	}
+	//else while current's value is not NULL display the values of the data members and assign current the value of the node pointer next of the object current points to 
 	else
 	{
 		while(current!=NULL)
@@ -222,12 +225,14 @@ void display(llist l)
 		}
 	}
 }
-
+//write the main function
 int main()
 {
+	//declare int variables ch, pos and an object l of the class llist
 	int ch;
 	llist l;
 	int pos;
+	//use a do while loop (while ch is not 0, which is indicative of the exit condition), display the options available to manipulate/view the details of the linked list and take input for the choice of the user in ch and using switch case on ch call the appropriate function and take required input, if any
 	do
 	{
 		cout<<"\n\tLinked List Gen "<<endl<<"1. Insert a node"<<endl<<"2. Delete the first node"<<endl<<"3. Delete the last node"<<endl<<"4. Display the stored values"<<endl<<"5. Insert Node at a particular position"<<endl<<"6. Delete Node from a particular position"<<endl<<"7. Count the number of nodes present"<<endl<<"0. Exit";
@@ -258,6 +263,7 @@ int main()
 				break;
 		}
 	}while(ch!=0);
+	//au revoir
 	return 0;
 }
 			
