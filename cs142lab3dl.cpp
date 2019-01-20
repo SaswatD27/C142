@@ -194,7 +194,7 @@ void display(llist l)	//recursion can also be utilised :P Kinda obvious
 	}
 	else
 	{
-		while(current!=tail->next)
+		while(current!=l.tail->next)
 		{
 			cout<<"Node no. "<<i++<<endl;
 			cout<<"Integer value - "<<current->a<<endl<<"Character value - "<<current->b<<endl;
@@ -208,6 +208,7 @@ void revdisplay(llist l,node*p,int pos=1)
 	cout<<"Underflow";
 	else
 	{
+		int i=1;
 		node *current=l.tail;
 		do
 		{
@@ -258,10 +259,6 @@ int main()
 			       		revdisplay(l,p);
 			       }
 			       break;
-			case 9:revLL(l);
-			       break;
-			case 10:revLL2(l);
-			       break;
 			case 0:break;
 			default:cout<<"Give da right input, ya scallawag!";
 				break;
@@ -269,3 +266,4 @@ int main()
 	}while(ch!=0);
 	return 0;
 }
+			
