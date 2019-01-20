@@ -1,4 +1,4 @@
-//include libraries
+//include libraries //will further refine and optimise the code keeping in mind the salient features of doubly linked nodes
 #include<iostream>
 using namespace std;
 //declare class node
@@ -170,14 +170,25 @@ void delet(llist &l)
 		{
 			delete l.head;
 			l.head=NULL;
-			l.tail=NULL;
 		}
-		//else while the value of the node pointer next of the node pointed to by current is not NULL
+		//else while the value of the node pointer next of the node pointed to by current is not NULL, assign current the value of its next node with each iteration
 		else
 		{	
-			node *temp=l.tail;
-			l.tail=l.tail->prev;
-			l.tail->next=NULL;
+			while(current->next!=NULL)
+			{
+				current=current->next;
+			}
+			//declare a node pointer temo and point it at the current node and point current to the head node
+			node *temp=current;
+			current=l.head;
+			//while current's next node is not temp, assign current the value of its next node with each iteration
+			while(current->next!=temp)
+			{
+				current=current->next;
+			}
+			//assign current's node pointer next a value of NULL
+			current->next=NULL;
+			//delete the node pointed to by temp
 			delete temp;
 		}
 	}
